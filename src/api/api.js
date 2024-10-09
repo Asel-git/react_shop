@@ -22,10 +22,19 @@ export const api = createApi({
         method: "DELETE",
       }),
     }),
+    // ! patch
+    editOnlineShop: builder.mutation({
+      query: ({ editOnlineShop, saveIdElement }) => ({
+        url: `carts/${saveIdElement}`,
+        method: "PATCH",
+        body: editOnlineShop,
+      }),
+    }),
   }),
 });
 export const {
   useGetOnlineShopsQuery,
   useAddOnlineShopMutation,
   useDeleteOnlineShopMutation,
+  useEditOnlineShopMutation,
 } = api;
